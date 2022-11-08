@@ -1,0 +1,25 @@
+import java.util.Scanner;  
+
+public class Answer1 {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+	    System.out.print("Enter subtotal: ");
+	    String stringSubtotal = scanner.nextLine();
+	    float subtotal = Float.parseFloat(stringSubtotal);
+	    
+	    System.out.print("Enter Discount percent: ");
+	    String stringDiscountPercent = scanner.nextLine();
+	    float discountPercent = Float.parseFloat(stringDiscountPercent);
+	    
+	    float discountAmount = subtotal * discountPercent;
+
+	    System.out.println(String.format("Discount amount: ", discountAmount));
+	    
+	    float invoiceTotal = subtotal - discountAmount;
+	    
+	    System.out.println(String.format("Invoice total: ", invoiceTotal));
+	}
+
+}

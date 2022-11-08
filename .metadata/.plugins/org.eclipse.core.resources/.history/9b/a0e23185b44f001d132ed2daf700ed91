@@ -1,0 +1,27 @@
+import java.util.Scanner; 
+
+public class Answer2 {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Download Time Estimator");
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("Enter file size (MB): ");
+		int fileSize = scanner.nextInt();
+		
+		System.out.print("Enter download speed (MB/sec): ");
+		int downloadSpeed = scanner.nextInt();
+		
+		int totalSeconds = fileSize / downloadSpeed;
+		
+		int seconds = totalSeconds % 60;
+		
+		int totalMinutes = totalSeconds / 60;
+		
+		int minutes = totalMinutes % 60;
+		
+		int hours = totalMinutes / 60;
+	}
+
+}

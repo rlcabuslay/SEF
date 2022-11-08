@@ -1,0 +1,46 @@
+import java.util.Scanner;  
+
+public class Answer1 {
+
+	public static void main(String[] args) {
+		System.out.println("Welcome to the Invoice Total Calculator");
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		int numInvoices = 0;
+		int totalInvoice = 0;
+		int totalDiscount = 0;
+		
+		while (true) {
+			System.out.print("Enter subtotal: ");
+		    String stringSubtotal = scanner.nextLine();
+		    float subtotal = Float.parseFloat(stringSubtotal);
+		    
+		    System.out.print("Enter Discount percent: ");
+		    String stringDiscountPercent = scanner.nextLine();
+		    float discountPercent = Float.parseFloat(stringDiscountPercent);
+		    
+		    float discountAmount = subtotal * discountPercent;
+
+		    System.out.println(String.format("Discount amount: %s", discountAmount));
+		    
+		    float invoiceTotal = subtotal - discountAmount;
+		    
+		    System.out.println(String.format("Invoice total: %s", invoiceTotal));
+		    
+		    numInvoices++;
+	    	totalInvoice += invoiceTotal;
+	    	totalDiscount += discountAmount;
+		    
+		    System.out.print("Continue? (y/n): ");
+		    String continueCalc = scanner.nextLine();
+		    
+		    if (continueCalc.equals("y")) {
+		    	continue;
+		    } else if (continueCalc.equals("n")){
+		    	break;
+		    }
+		}
+	}
+
+}
